@@ -1,6 +1,16 @@
 # aws-ec2-terraform
 
-This repository consists of terraform manifests to create 1 VPC, 1 Internet Gateway, 1 Public Subnet, 1 Private Subnet, 1 Route Table, 2 Security Groups and 2 EC2 instances one instance(Webserver) with Public subnet and another instance(Database) with Private subnet in AWS. 
+This repository consists of terraform manifests to create the following resources in AWS
+
+1. One VPC - awslab-vpc
+2. One Internet Gateway - internet_gateway
+3. One Public Subnet - awslab-subnet-public
+4. One Private Subnet - awslab-subnet-private
+5. One Route Table - awslab-rt-internet
+6. Two Security Groups - Webserver Security Group and Database Server Security Group
+7. One Public EC2 instance - EC2-Public
+8. One Public EC2 instance - EC2-Private
+9. One ssh key named TEST.pem to login into public EC2 instance. From public EC2 instance you can ssh into private EC2 instance.
 
 **Prerequisites to execute the terraform manifests**
 
