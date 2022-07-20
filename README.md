@@ -16,5 +16,9 @@ This repository consists of terraform manifests to create the following resource
 
 1. Download Terraform based on the corresponding Operating System
 2. Install Terraform CLI
-3. Update provider.tf file using any one of the authentication method mentioned in this link https://registry.terraform.io/providers/hashicorp/aws/latest/docs to authenticate to your AWS account.
+3. Clone this repository and get inside root directory
+3. Update provider.tf file to authenticate your AWS account by following any one of the authentication method mentioned in this link https://registry.terraform.io/providers/hashicorp/aws/latest/docs.
 4. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
+5. You will get public EC2 instance public IP and Private EC2 instance private IP and also TEST.pem ssh key will be created in your root directory.
+6. Using the below command you can login into Public EC2 instance
+   Command: ssh -i TEST.pem ec2-user@<public-EC2-instance-ip>
