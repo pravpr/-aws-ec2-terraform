@@ -22,4 +22,4 @@ This repository consists of terraform manifests to create the following resource
 3. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
 4. You will get public EC2 instance public IP and Private EC2 instance private IP and also TEST.pem ssh key will be created in your root directory.
 5. Using the below command you can login into Public EC2 instance
-   Command: ssh -i TEST.pem ec2-user@public-EC2-instance-ip
+   **Command:** ssh -i TEST.pem ec2-user@public-EC2-instance-ip
