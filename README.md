@@ -9,7 +9,7 @@ This repository consists of terraform manifests to create the following resource
 5. One Route Table - awslab-rt-internet
 6. Two Security Groups - Webserver Security Group and Database Server Security Group
 7. One Public EC2 instance - EC2-Public
-8. One Public EC2 instance - EC2-Private
+8. One Private EC2 instance - EC2-Private
 9. One ssh key named TEST.pem to login into public EC2 instance. From public EC2 instance you can ssh into private EC2 instance.
 
 **Prerequisites to execute the terraform manifests**
