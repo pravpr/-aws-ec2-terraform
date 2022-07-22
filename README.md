@@ -30,4 +30,4 @@ This repository consists of terraform manifests to create the following resource
    **Command:** ssh -i prpr-key.pem ec2-user@public-EC2-instance-public-ip
 5. From public EC2 instance, you can login into Private EC2 instance using the below command
    **Command:** ssh -i prpr-key.pem ec2-user@private-EC2-instance-private-ip
-6. Uncomment all the lines in backend.tf and execute terraform init command. This will ask to migrate terraform.tfstate file to S3 bucket which we created. Provide yes and press enter. This will migrate the terraform.tfstate from local to S3 bucket.
+6. Uncomment all the lines in backend.tf and execute terraform init command. This will ask to migrate terraform.tfstate file from local to S3 bucket which we created. Provide yes and press enter. This will migrate the terraform.tfstate from local to S3 bucket.
