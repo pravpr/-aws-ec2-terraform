@@ -6,11 +6,14 @@ This repository consists of terraform manifests to create the following resource
 2. One Internet Gateway - internet_gateway
 3. One Public Subnet - awslab-subnet-public
 4. One Private Subnet - awslab-subnet-private
-5. One Route Table - awslab-rt-internet
-6. Two Security Groups - Webserver Security Group and Database Server Security Group
-7. One Public EC2 instance with apache httpd installed- EC2-Public
-8. One Private EC2 instance - EC2-Private
-9. One ssh key named TEST.pem to login into public EC2 instance. From public EC2 instance you can ssh into private EC2 instance.
+5. One Route Table for internet gateway- awslab-rt-internet
+6. One Elastic IP for NAT gateway
+7. One NAT gateway
+8. One Route table for NAT gateway
+9. Two Security Groups - Webserver Security Group and Database Server Security Group
+10. One Public EC2 instance with apache httpd installed- EC2-Webserver
+11. One Private EC2 instance with mariadb installed- EC2-Databaseserver
+12. One ssh key named prpr-key.pem to login into public EC2 instance. From public EC2 instance you can ssh into private EC2 instance using prpr-key.pem.
 
 **Prerequisites to execute the terraform manifests**
 1. Download Terraform based on the corresponding Operating System
