@@ -8,7 +8,7 @@ This repository consists of terraform manifests to create the following resource
 4. One Private Subnet - awslab-subnet-private
 5. One Route Table - awslab-rt-internet
 6. Two Security Groups - Webserver Security Group and Database Server Security Group
-7. One Public EC2 instance - EC2-Public
+7. One Public EC2 instance with apache httpd installed- EC2-Public
 8. One Private EC2 instance - EC2-Private
 9. One ssh key named TEST.pem to login into public EC2 instance. From public EC2 instance you can ssh into private EC2 instance.
 
@@ -18,8 +18,7 @@ This repository consists of terraform manifests to create the following resource
 
 **Steps to provision resources in AWS using terraform**
 1. Clone this repository and get inside root directory
-2. Update provider.tf file to authenticate your AWS account by following any one of the authentication method mentioned in this link https://registry.terraform.io/providers/hashicorp/aws/latest/docs.
-3. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
-4. You will get public EC2 instance public IP and Private EC2 instance private IP and also TEST.pem ssh key will be created in your root directory.
-5. Using the below command you can login into Public EC2 instance
+2. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
+3. After execcuting terraform apply command, you will get public EC2 instance public IP and Private EC2 instance private IP and also TEST.pem ssh key will be created in your root directory.
+4. Using the below command you can login into Public EC2 instance
    **Command:** ssh -i TEST.pem ec2-user@public-EC2-instance-public-ip
