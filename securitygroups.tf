@@ -8,26 +8,34 @@ resource "aws_security_group" "webserver-security-group" {
   vpc_id      = aws_vpc.awslab-vpc.id
   # allow ingress port 22
   ingress {
-    protocol   = "tcp"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-    from_port  = 22
-    to_port    = 22
+    from_port   = 22
+    to_port     = 22
   }
 
   # allow ingress port 80 
   ingress {
-    protocol   = "tcp"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-    from_port  = 80
-    to_port    = 80
+    from_port   = 80
+    to_port     = 80
+  }
+
+  # allow ingress port 443 
+  ingress {
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 443
+    to_port     = 443
   }
 
   # allow ingress ephemeral ports 
   ingress {
-    protocol   = "icmp"
+    protocol    = "icmp"
     cidr_blocks = ["0.0.0.0/0"]
-    from_port  = -1
-    to_port    = -1
+    from_port   = -1
+    to_port     = -1
   }
 
 
@@ -51,26 +59,26 @@ resource "aws_security_group" "database-security-group" {
 
   # allow ingress ephemeral 22 port 
   ingress {
-    protocol   = "tcp"
+    protocol    = "tcp"
     cidr_blocks = ["172.16.1.0/24"]
-    from_port  = 22
-    to_port    = 22
+    from_port   = 22
+    to_port     = 22
   }
 
   # allow ingress port 3110 
   ingress {
-    protocol   = "tcp"
+    protocol    = "tcp"
     cidr_blocks = ["172.16.1.0/24"]
-    from_port  = 3110
-    to_port    = 3110
+    from_port   = 3110
+    to_port     = 3110
   }
 
   # allow ingress ephemeral ports 
   ingress {
-    protocol   = "icmp"
-    cidr_blocks = ["0.0.0.0/0"]
-    from_port  = -1
-    to_port    = -1
+    protocol    = "icmp"
+    cidr_blocks = ["172.16.1.0/24"]
+    from_port   = -1
+    to_port     = -1
   }
 
   egress {
