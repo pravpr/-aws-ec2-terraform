@@ -89,13 +89,7 @@ resource "aws_instance" "ec2_private" {
   sleep 30
   sudo systemctl stop mariadb
   sudo sed -i 's/\[mariadb]/& \nport=3110/' /etc/my.cnf.d/server.cnf
-  sudo sleep 60
-  sudo systemctl stop mariadb
-  sudo sleep 30
-  sudo systemctl start mariadb
-  sudo sleep 30
-  sudo systemctl stop mariadb
-  sudo sleep 60
+  sleep 60
   sudo systemctl start mariadb
   EOF
   tags = {
