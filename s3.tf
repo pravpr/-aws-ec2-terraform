@@ -1,6 +1,6 @@
 # create an S3 bucket to store the state file in
 resource "aws_s3_bucket" "bucket" {
-  bucket = "prpr-terraform-state-backend"
+  bucket = "prpr-terraform-state-backend" # s3 bucket name should be globally unique.
   versioning {
     enabled = true
   }
