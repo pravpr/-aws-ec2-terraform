@@ -24,10 +24,11 @@ This repository consists of terraform manifests to create the following resource
 **Steps to provision resources in AWS using terraform**
 1. Clone this repository and get inside root directory
 2. For the very first time, comment all the lines in backend.tf file and execute terraform init for initialization. Otherwise it will fail as S3 bucket is not yet created.
-2. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
-3. After execcuting terraform apply command, you will get Public EC2 instance public IP and Private EC2 instance private IP and also prpr-key.pem ssh key will be created in your root directory.
-4. Using the below command you can login into Public EC2 instance
+3. Change the S3 bucket name in s3.tf file. S3 bucket name should be globally unique.
+4. Execute terraform init, terraform plan, terraform apply commands to create resources in your corresponding AWS account.
+5. After execcuting terraform apply command, you will get Public EC2 instance public IP and Private EC2 instance private IP and also prpr-key.pem ssh key will be created in your root directory.
+6. Using the below command you can login into Public EC2 instance
    **Command:** ssh -i prpr-key.pem ec2-user@public-EC2-instance-public-ip
-5. From public EC2 instance, you can login into Private EC2 instance using the below command
+7. From public EC2 instance, you can login into Private EC2 instance using the below command
    **Command:** ssh -i prpr-key.pem ec2-user@private-EC2-instance-private-ip
-6. Uncomment all the lines in backend.tf and execute terraform init command. This will ask to migrate terraform.tfstate file from local to S3 bucket which we created. Provide yes and press enter. This will migrate the terraform.tfstate from local to S3 bucket.
+8. Uncomment all the lines in backend.tf and execute terraform init command. This will ask to migrate terraform.tfstate file from local to S3 bucket which we created. Provide yes and press enter. This will migrate the terraform.tfstate from local to S3 bucket.
