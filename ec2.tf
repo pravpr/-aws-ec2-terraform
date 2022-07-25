@@ -39,6 +39,7 @@ resource "aws_instance" "ec2_public" {
   sudo yum update -y
   sudo yum install -y httpd
   echo "Hello from the EC2 instance $(hostname -f)." > /var/www/html/index.html
+  sudo systemctl enable httpd
   sudo systemctl start httpd
   EOF
   tags = {
